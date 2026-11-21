@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MTMG 2K25 MB PREP</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#fff7ec;--card:#ffffff;--ink:#241b3a;--mute:#6d6485;--line:#eadfce;--red:#ef476f;--amb:#ffb703;--grn:#06b87a;--b1:#ff6b6b;--b2:#00a6a6;--b3:#7b5cff;--b4:#ff9f1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17122b;--card:#231c3d;--ink:#f4efff;--mute:#a79ec4;--line:#352d55}}
+:root[data-theme="dark"]{--bg:#17122b;--card:#231c3d;--ink:#f4efff;--mute:#a79ec4;--line:#352d55}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 "Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:14px 14px 80px}
+header{border-radius:24px;padding:20px;color:#fff;background:linear-gradient(120deg,#ff6b6b,#ff9f1c 35%,#00a6a6 68%,#7b5cff);position:relative;overflow:hidden}
+header h1{margin:0;font-size:clamp(26px,7vw,40px);font-weight:800;line-height:1.05}
+header p{margin:6px 0 0;opacity:.95}
+.tools{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;margin-bottom:12px}
+.tools button{background:#ffffff33;color:#fff;border:0;border-radius:10px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
+nav{display:flex;gap:6px;margin:14px 0;overflow-x:auto}
+nav button{flex:1;min-width:max-content;border:2px solid var(--line);background:var(--card);color:var(--ink);padding:10px 14px;border-radius:14px;font:inherit;font-weight:600;cursor:pointer}
+nav button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--b3);outline-offset:2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:12px}
+h2{margin:0 0 10px;font-size:20px}h3{margin:0 0 8px;font-size:16px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.ringbox{display:flex;align-items:center;gap:16px}
+.ring{width:110px;height:110px;border-radius:50%;display:grid;place-items:center;flex:none}
+.ring b{width:80px;height:80px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:24px;font-weight:800}
+.stats{display:flex;gap:8px;flex-wrap:wrap}
+.pill{padding:6px 12px;border-radius:999px;color:#fff;font-weight:600;font-size:14px}
+.bar{height:12px;background:var(--line);border-radius:99px;overflow:hidden;margin:4px 0 10px}
+.bar i{display:block;height:100%;border-radius:99px;transition:width .4s}
+.lbl{display:flex;justify-content:space-between;font-size:14px}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px}
+.chip{flex:none;width:52px;border:0;border-radius:14px;padding:6px 0 8px;background:var(--card);color:var(--ink);cursor:pointer;font:inherit;font-weight:800;border:2px solid var(--line);text-align:center}
+.chip small{display:block;font-weight:400;font-size:11px;color:var(--mute)}
+.chip .bar{height:5px;margin:4px 8px 0}
+.chip.on{color:#fff;border-color:transparent}.chip.on small{color:#fff}
+.chip.today{border-color:var(--amb);box-shadow:0 0 0 2px var(--amb)}
+.dayhead{border-radius:20px;padding:16px;color:#fff;margin-bottom:12px}
+.dayhead h2{margin:0;font-size:22px}.dayhead p{margin:4px 0 0;opacity:.95;font-size:14px}
+.row{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.row .t{flex:1}.row .s{font-size:13px;color:var(--mute)}
+.tl{flex:none;border:0;border-radius:999px;padding:7px 12px;font:inherit;font-weight:600;font-size:13px;color:#fff;cursor:pointer;min-width:74px}
+.tl.s0{background:#9b94b3}.tl.s1{background:var(--red)}.tl.s2{background:var(--amb);color:#3a2a00}.tl.s3{background:var(--grn)}
+.ck{display:flex;gap:10px;align-items:center;padding:8px 0;cursor:pointer}
+.ck input{width:22px;height:22px;accent-color:var(--b2)}
+.ck.done span{text-decoration:line-through;color:var(--mute)}
+.ck small{color:var(--mute)}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:9px 10px;width:100%}
+.sc{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:6px;align-items:center;margin-bottom:6px}
+.sc input{text-align:center;padding:8px 4px}
+.sc .d{font-weight:600;font-size:14px}
+.hd{font-size:12px;color:var(--mute);text-align:center}
+.ok{background:#06b87a22;border-color:var(--grn)!important}
+.btn{border:0;border-radius:12px;padding:10px 16px;font:inherit;font-weight:600;color:#fff;background:var(--b3);cursor:pointer}
+.err{border-left:6px solid var(--b4);padding:10px 12px;background:var(--bg);border-radius:12px;margin-top:8px}
+.err .m{font-size:12px;color:var(--mute)}
+.x{float:right;background:none;border:0;color:var(--mute);font-size:18px;cursor:pointer}
+.empty{color:var(--mute);padding:8px 0}
+.leg{font-size:13px;color:var(--mute);margin:0 0 8px}
+.overflow{overflow-x:auto}
+[hidden]{display:none!important}
+.av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;flex:none}
+#lg{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:16px;background:linear-gradient(120deg,#ff6b6b,#ff9f1c 35%,#00a6a6 68%,#7b5cff)}
+#lf{background:var(--card);border-radius:24px;padding:22px;width:100%;max-width:380px;display:grid;gap:10px}
+#lf h2,#lf p{margin:0}#lm{color:var(--red);min-height:1.2em;font-size:14px}
+#ts{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;z-index:60}
+</style></head><body>
+<div class="wrap">
+<header><div class="tools"><button id="th" aria-label="Toggle theme">Theme</button><button id="rs">Reset</button><button id="so">Sign out</button></div>
+<h1>MTMG 2K25 MB PREP</h1><p style="font-weight:600">14-Day Revision Tracker · Day 1 is Sun 22 Nov 2026</p><p id="last">Tap a topic to set its status. Changes sync live for every admin.</p></header>
+<nav id="nav"></nav><main id="main"></main>
+</div>
+<div id="lg"><form id="lf"><h2>Admin sign-in</h2><p>This tracker is for group admins only.</p><input id="nm" placeholder="Your name" autocomplete="name" required><input id="pw" type="password" placeholder="Admin password" autocomplete="current-password" required><button class="btn" type="submit">Sign in</button><p id="lm" role="alert"></p></form></div>
+<div id="ts" hidden></div>
+<script>
+const HUES={1:"#ff6b6b",2:"#ff6b6b",3:"#00a6a6",4:"#00a6a6",5:"#00a6a6",6:"#00a6a6",7:"#00a6a6",8:"#7b5cff",9:"#7b5cff",10:"#7b5cff",11:"#ff9f1c",12:"#ef476f",13:"#d6336c",14:"#06b87a"};
+const D=[
+["Block 1","Laboratory medicine, cellular pathology and red cells",[["Chem Path","Lab operations, specimens, pre-analytical errors"],["Chem Path","Assay performance, POCT, immunology, toxicology, nutrition, enzymes, endocrine"],["Histopath","Cell adaptation, injury and death"],["Histopath","Inflammation, neoplasia, haemodynamics, diagnostic techniques"],["Haematology","Reference values, haemopoiesis, Hb synthesis"],["Haematology","Transfusion intro and normal haemostasis"]]],
+["Block 1","Microbiology foundations and haematological disorders",[["MMP","Bacteriology, microbiota, pathogenesis, transmission"],["MMP","Mycology, virology, parasitology"],["Haematology","Marrow failure, haemoglobinopathies, G6PD, membrane disorders"],["Haematology","Acute and chronic leukaemias"],["Histopath","Disorders of immunity and unresolved general pathology"]]],
+["Block 2","Chemical Pathology I + Histopathology I",[["Chem Path","Diabetes, liver disease, tumour markers"],["Chem Path","Urinalysis, renal function, CSF and body fluids"],["Chem Path","Thyroid and parathyroid disorders"],["Histopath","Renal pathology, glomerulonephritis, nephrotic syndrome"]]],
+["Block 2","Chemical Pathology II + Histopathology II",[["Chem Path","Fluids, electrolytes, Ca/PO4/Mg, acid-base"],["Chem Path","Lipids, adrenal disorders"],["Chem Path","B/T cells, immunotherapy, pregnancy testing, newborn screening"],["Histopath","Reproductive and breast pathology"],["Histopath","Lymphoreticular pathology, pneumoconiosis, lung cancer"]]],
+["Block 2","Haematology I + MMP I",[["Haematology","Megaloblastic, iron deficiency, chronic disease, haemolytic anaemia"],["Haematology","Thalassaemia, sickle cell, other haemoglobinopathies"],["MMP","Staphylococci, streptococci, chlamydia, rickettsia, Enterobacteriaceae"],["MMP","Antimicrobial therapy and serological diagnosis"],["MMP","HIV, respiratory and emerging viruses"]]],
+["Block 2","Haematology II + Histopathology III",[["Haematology","Leukaemia revision, lymphoma, MPN, myeloma, MDS, PNH"],["Haematology","Transfusion reactions, ABO/Rh, HDFN, marrow transplant"],["Histopath","Tuberculosis and GI pathology"],["Histopath","CNS infections, CNS tumours, neurodegeneration"]]],
+["Block 2","Haematology III + MMP II + Histopathology IV",[["Haematology","Platelet, inherited and acquired bleeding disorders, VTE, anticoagulation"],["MMP","Mycobacteria, typhoid, septicaemia, zoonoses, diarrhoeal diseases"],["MMP","Malaria, protozoa, helminths, STIs, mycoses"],["Histopath","Cardiovascular, musculoskeletal, respiratory, endocrine, skin, liver pathology"],["Chem Path","Leftovers: vitamins, trace elements, TDM, porphyrias, cardiac biomarkers"]]],
+["Block 3","Chemical Pathology + Histopathology",[["Chem Path","Ca/Mg/PO4, fluids, reproductive biochemistry, liver and renal assessment"],["Chem Path","Lipids, endocrine axes, acid-base, toxicology, tumour markers, DM/GDM cases"],["Histopath","Typhoid, amoebiasis, TB, schistosomiasis, malaria pathology"],["Histopath","Oncogenesis, MHC, autoimmunity, hypersensitivity, molecular genetics"]]],
+["Block 3","Haematology + MMP",[["Haematology","Haemoglobinopathies, blood groups, anaemia investigations, membrane disorders"],["Haematology","Leukaemias, plasma cell disorders, bleeding disorders, transfusion"],["MMP","Mycobacteria, microbiota, immunity, virology, retroviruses, haemorrhagic fevers"],["MMP","Parasitology, STIs, sepsis, endocarditis, mycology, anaerobes, chemotherapy"]]],
+["Block 3","Pharmacology",[["Pharmacology","General pharmacology, PK, PD, drug interactions"],["Pharmacology","Toxicology, pesticides, heavy metals, decontamination"],["Pharmacology","Antiemetics, anticonvulsants, muscle relaxants, Parkinson and Alzheimer drugs"],["Pharmacology","Cholinergic and adrenergic drugs"],["Pharmacology","Anticoagulants, antiplatelets, lipid-lowering, heart failure drugs"],["Pharmacology","Analgesics and NSAIDs, special populations"],["Pharmacology","Antimalarials, amoebicides, anthelmintics"]]],
+["Integration","Integrated question marathon",[["Theme","Anaemia and haemolysis"],["Theme","Diabetes and endocrine disorders"],["Theme","Renal and electrolyte disorders"],["Theme","Liver disease and jaundice"],["Theme","Infections and immunity"],["Theme","Neoplasia and haematological malignancy"],["Theme","Haemostasis and thrombosis"]]],
+["Mock 1","Full timed simulation. No notes, no discussion.",[["Exam","MCQ paper"],["Exam","Essay paper"],["Exam","Practical / OSPE stations"],["Review","Mark and log errors"]]],
+["Mock 2","Fresh questions, focus on Mock 1 weak areas",[["Exam","MCQ paper"],["Exam","Essay paper"],["Exam","Practical / OSPE stations"],["Review","Mark and log errors"]]],
+["Final","Consolidation. No new massive topics.",[["Review","Revisit the error bank"],["Review","Rebuild pathways and classifications"],["Review","Rapid-fire practical identification"],["Review","Common differentials"],["Review","Drug mechanisms and adverse effects"],["Review","Essay outlines from memory"]]]
+];
+D[2][1]+=" + Pharmacology";D[3][1]+=" + Pharmacology";D[4][1]+=" + Pharmacology";D[5][1]+=" + Pharmacology";D[6][1]+=" + Pharmacology";
+D[2][2].push(["Pharmacology","Adverse drug reactions, pharmacovigilance, opioids, local anaesthetics"]);
+D[3][2].push(["Pharmacology","Antiarrhythmic drugs, antipsychotics (neuroleptics), antidepressants"]);
+D[4][2].push(["Pharmacology","Chemotherapy of infection, classification of antibacterials, beta-lactams and quinolones"],["Pharmacology","Aminoglycosides, macrolides, lincosamides, sulphonamides, glycopeptides, newer antibacterials"],["Pharmacology","Antiviral drugs (non-HIV) and antiretrovirals"]);
+D[5][2].push(["Pharmacology","Anticancer agents"],["Pharmacology","Drugs for inflammatory bowel disease"]);
+D[6][2].push(["Pharmacology","Antimycobacterial, antifungal and antiparasitic drugs"]);
+D[9][2].push(["Pharmacology","Systems pharmacology (metabolism and endocrine): thyroid, pancreatic, hypothalamic-pituitary, adrenocortical and gonadal hormones"]);
+D[10]=["Integration","Overlapping topics taught in more than one block, tested across disciplines",[
+["Chem Path","Specimen collection, pre-analytical issues, assay performance, POCT"],
+["Chem Path","Toxicology concepts and immunology"],
+["Chem Path","Ca/PO4/Mg, fluids and electrolytes, acid-base, renal function"],
+["Chem Path","Thyroid, parathyroid, adrenal and pituitary axes, diabetes (DM/GDM)"],
+["Chem Path","Liver function, lipids and CV risk, tumour markers, urinalysis, reproductive biochemistry"],
+["Haematology","Haemoglobinopathies, sickle cell disease, membrane disorders, G6PD and enzymopathies"],
+["Haematology","Leukaemias, bone marrow failure, lymphoma, myeloma and plasma cell disorders"],
+["Haematology","Transfusion, ABO/Rh, normal haemostasis, inherited bleeding disorders"],
+["Histopath","Neoplasia, oncogenesis, tumour biology, genetic basis of disease"],
+["Histopath","Tuberculosis (with schistosomiasis)"],
+["MMP","Mycobacterial infections (TB), normal microbiota, bacteriology"],
+["MMP","Viruses: clinical virology, HIV and retroviruses, haemorrhagic fever viruses"],
+["MMP","Parasites (malaria, helminths, protozoa) and STIs"],
+["Pharmacology","Anti-emetics and heart failure drugs"],
+["Pharmacology","Antimalarials, antihelminthics and amoebicides"],
+["Pharmacology","Endocrine pharmacology (systems pharmacology)"]]];
+const SES=[["Retrieval warm-up","30 min"],["MCQ round 1","75 min"],["MCQ dissection","75 min"],["Break / lunch","60 min"],["MCQ round 2","60 min"],["Essay workshop","60 min"],["Practical workshop","75 min"],["Error log and review","15 min"]];
+const LAB=["Not started","Red","Amber","Green"],TYPES=["Knowledge gap","Conceptual error","Application error","Exam error"];
+let S={t:{},s:{},sc:{},e:[],tab:"dash",day:1,who:"",last:null,filter:"",act:{log:[],admins:{},counts:{},roster:[]}};
+let PW="";try{PW=localStorage.getItem("rev14pw")||"";S.who=localStorage.getItem("rev14who")||""}catch(e){}
+function toast(m){const t=$("#ts");t.textContent=m;t.hidden=false;setTimeout(()=>t.hidden=true,3000)}
+function login(msg){$("#lg").hidden=false;$("#lm").textContent=msg||""}
+async function api(method,body,q){const r=await fetch("/api/state"+(q||""),{method,headers:{"Content-Type":"application/json","x-admin-password":PW},body:body?JSON.stringify(body):undefined});if(r.status==401)throw new Error("auth");if(!r.ok){let m="";try{m=(await r.json()).error}catch(_){}throw new Error("net: "+m)}return r.json()}
+let busy=0;const send=o=>{busy++;return api("POST",Object.assign({who:S.who},o)).catch(e=>{if(e.message=="auth")login("Session expired. Sign in again.");else toast("Could not save. Check your connection.")}).finally(()=>{busy--})};
+function apply(h){const n={t:{},s:{},sc:{},e:[]};let last=null;for(const[f,v]of Object.entries(h)){const p=f.split("|"),val=JSON.parse(v);if(p[0]=="t")n.t[p[1]]=val;else if(p[0]=="s")(n.s[p[1]]=n.s[p[1]]||[])[+p[2]]=val;else if(p[0]=="sc")(n.sc[p[1]]=n.sc[p[1]]||["","",""])[+p[2]]=val;else if(p[0]=="e")n.e.push(val);else if(p[0]=="m")last=val}n.e.sort((a,b)=>b.at-a.at);Object.assign(S,n,{last})}
+async function pull(){if(busy)return;try{const d=await api("GET",null,S.tab=="adm"?"?activity=1":"");if(busy)return;apply(d.state);if(d.me)S.who=d.me;if(d.log)S.act={log:d.log,admins:d.admins||{},counts:d.counts||{},roster:d.roster||[]};$("#lg").hidden=true;if(!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))render()}catch(e){if(e.message=="auth")login()}}
+const save=()=>{};
+const $=s=>document.querySelector(s);
+const col=d=>HUES[d];
+const dayTopics=d=>D[d-1][2].map((t,i)=>({k:d+"-"+i,d,i,c:t[0],n:t[1]}));
+const all=()=>D.flatMap((_,i)=>dayTopics(i+1));
+const dayPct=d=>{const ts=dayTopics(d);return Math.round(100*ts.filter(t=>S.t[t.k]==3).length/ts.length)};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const START=new Date(2026,10,22),DAYMS=86400000;
+const dateOf=d=>new Date(2026,10,22+d-1);
+const sd=d=>dateOf(d).toLocaleDateString("en-GB",{day:"numeric",month:"short"});
+const ld=d=>dateOf(d).toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"});
+function todayN(now){now=now||new Date();const t=new Date(now.getFullYear(),now.getMonth(),now.getDate());return Math.round((t-START)/DAYMS)+1}
+const unrated=d=>dayTopics(d).filter(t=>!S.t[t.k]);
+function nextCard(n){
+ n=n===undefined?todayN():n;
+ const fd=D.map((_,i)=>i+1).find(d=>unrated(d).length),dn=Math.min(Math.max(n,1),14);
+ let h,p,go;
+ if(n<1){const k=1-n;h="Starts "+ld(1);p="In "+k+" day"+(k>1?"s":"")+". Day 1: "+D[0][1]+".";go=1}
+ else if(!fd){h="All topics rated";p=n>14?"The 14 days are over. Keep clearing red and amber topics.":"Every topic has a status. Clear red and amber topics, then run the mocks.";go=dn}
+ else if(fd<dn||(n>14&&fd<=14)){h="Behind schedule";p="Day "+fd+" ("+ld(fd)+") still has "+unrated(fd).length+" unrated topic(s)."+(n<=14?" Today is Day "+dn+".":" The 14 days are over.");go=fd}
+ else if(fd==dn){h="Today · Day "+dn;p=ld(dn)+": "+D[dn-1][1]+". Next topic: "+unrated(dn)[0].n;go=dn}
+ else{h="Ahead of schedule";p="Today's plan is rated. Next: Day "+fd+" ("+ld(fd)+"), "+D[fd-1][1]+".";go=fd}
+ return `<div class="card"><h2>${esc(h)}</h2><p style="margin:0 0 10px">${esc(p)}</p><button class="btn" data-go="${go}">Open day ${go}</button></div>`}
+const TABS=[["dash","Dashboard"],["days","Daily plan"],["scores","Scores"],["errs","Error bank"],["adm","Admins"]];
+function nav(){$("#nav").innerHTML=TABS.map(t=>`<button class="${S.tab==t[0]?"on":""}" data-tab="${t[0]}">${t[1]}</button>`).join("")}
+function dash(){
+ const a=all(),n=a.length,c=[0,0,0,0];a.forEach(t=>c[S.t[t.k]||0]++);
+ const pct=Math.round(100*c[3]/n);
+ const blocks=[["Block 1",[1,2],"#ff6b6b"],["Block 2",[3,4,5,6,7],"#00a6a6"],["Block 3",[8,9,10],"#7b5cff"],["Integration and mocks",[11,12,13,14],"#ff9f1c"]];
+ const bl=blocks.map(b=>{const ts=b[1].flatMap(dayTopics),g=ts.filter(t=>S.t[t.k]==3).length,p=Math.round(100*g/ts.length);
+  return `<div class="lbl"><span>${b[0]}</span><b>${p}%</b></div><div class="bar"><i style="width:${p}%;background:${b[2]}"></i></div>`}).join("");
+ const reds=a.filter(t=>S.t[t.k]==1).slice(0,8);
+ const avg=m=>{const v=Object.values(S.sc).map(x=>parseFloat(x[m])).filter(x=>!isNaN(x));return v.length?Math.round(v.reduce((x,y)=>x+y)/v.length)+"%":"–"};
+ return `<div class="grid"><div class="card ringbox"><div class="ring" style="background:conic-gradient(var(--grn) ${pct*3.6}deg,var(--line) 0)"><b>${pct}%</b></div>
+ <div><h2>Topics mastered</h2><div class="stats"><span class="pill" style="background:var(--grn)">${c[3]} green</span><span class="pill" style="background:var(--amb);color:#3a2a00">${c[2]} amber</span><span class="pill" style="background:var(--red)">${c[1]} red</span><span class="pill" style="background:#9b94b3">${c[0]} to start</span></div></div></div>
+ ${nextCard()}</div>
+ <div class="card"><h2>Progress by block</h2>${bl}</div>
+ <div class="grid"><div class="card"><h2>Average scores</h2><div class="stats"><span class="pill" style="background:var(--b2)">MCQ ${avg(0)}</span><span class="pill" style="background:var(--b3)">Essay ${avg(1)}</span><span class="pill" style="background:var(--b1)">Practical ${avg(2)}</span></div><p class="leg" style="margin-top:10px">Target: 80% or more in each. Internal goal, not a pass mark.</p></div>
+ <div class="card"><h2>Red topics to tackle</h2>${reds.length?reds.map(t=>`<div class="row"><div class="t">${esc(t.n)}<div class="s">Day ${t.d} · ${t.c}</div></div></div>`).join(""):'<div class="empty">No red topics. Mark topics red when you cannot answer them reliably.</div>'}</div></div>`}
+function days(){
+ const d=S.day,h=D[d-1],ts=dayTopics(d),ss=S.s[d]||[];
+ const chips=D.map((_,i)=>{const x=i+1,on=x==d;return `<button class="chip ${on?"on":""}${x==todayN()?" today":""}" data-day="${x}" style="${on?"background:"+col(x):""}">${x}<small>${sd(x)}</small><div class="bar"><i style="width:${dayPct(x)}%;background:${on?"#fff":col(x)}"></i></div></button>`}).join("");
+ return `<div class="chips">${chips}</div>
+ <div class="dayhead" style="background:${col(d)}"><h2>Day ${d} · ${ld(d)}: ${esc(h[0])}</h2><p>${esc(h[1])}</p></div>
+ <div class="card"><h3>Topics</h3><p class="leg">Tap the badge to cycle: Not started, Red, Amber, Green.</p>${ts.map(t=>{const v=S.t[t.k]||0;return `<div class="row"><div class="t">${esc(t.n)}<div class="s">${t.c}</div></div><button class="tl s${v}" data-t="${t.k}">${LAB[v]}</button></div>`}).join("")}</div>
+ <div class="card"><h3>Daily sessions</h3>${SES.map((s,i)=>`<label class="ck ${ss[i]?"done":""}"><input type="checkbox" data-s="${i}" ${ss[i]?"checked":""}><span>${s[0]} <small>${s[1]}</small></span></label>`).join("")}</div>`}
+function scores(){
+ const rows=D.map((_,i)=>{const d=i+1,v=S.sc[d]||["","",""];
+  return `<div class="sc"><div class="d" style="color:${col(d)}">Day ${d}</div>${v.map((x,j)=>`<input type="number" inputmode="numeric" min="0" max="100" value="${x}" data-sc="${d}-${j}" class="${x!==""&&x>=80?"ok":""}" aria-label="Day ${d} ${["MCQ","Essay","Practical"][j]}">`).join("")}</div>`}).join("");
+ return `<div class="card"><h2>Daily scores (%)</h2><p class="leg">Green cells meet the 80% target.</p><div class="sc"><div></div><div class="hd">MCQ</div><div class="hd">Essay</div><div class="hd">Practical</div></div>${rows}</div>`}
+const tn=k=>{const[d,i]=k.split("-");return "Day "+d+" · "+D[d-1][2][i][1]};
+const hue=n=>{let h=0;for(const c of n)h=(h*31+c.charCodeAt(0))%360;return "hsl("+h+",65%,45%)"};
+function ago(t){const m=Math.round((Date.now()-t)/60000);if(m<1)return "just now";if(m<60)return m+" min ago";const h=Math.round(m/60);if(h<24)return h+" h ago";return Math.round(h/24)+" d ago"}
+function adm(){const A=S.act,names=[...new Set([...(A.roster||[]),...Object.keys(A.admins)])];
+ const cards=names.length?names.map(n=>`<div class="row"><div class="av" style="background:${hue(n)}">${esc(n[0]||"?").toUpperCase()}</div><div class="t"><b>${esc(n)}</b><div class="s">${A.counts[n]||0} actions · ${A.admins[n]?"active "+ago(+A.admins[n]):"no activity yet"}</div></div><button class="tl ${S.filter==n?"s3":"s0"}" data-f="${esc(n)}">${S.filter==n?"Showing":"Filter"}</button></div>`).join(""):'<div class="empty">No admins have signed in yet.</div>';
+ const lg=A.log.filter(x=>!S.filter||x.who==S.filter);
+ const feed=lg.length?lg.map(x=>`<div class="err" style="border-color:${hue(x.who)}"><b>${esc(x.who)}</b> ${esc(x.t)}<div class="m">${new Date(x.at).toLocaleString([],{dateStyle:"medium",timeStyle:"short"})} · ${ago(x.at)}</div></div>`).join(""):'<div class="empty">No activity yet.</div>';
+ return `<div class="card"><h2>Admins (${names.length})</h2>${cards}</div><div class="card"><h2>Recent activity${S.filter?" · "+esc(S.filter):""}</h2><p class="leg">Latest 100 actions across all admins.</p>${feed}</div>`}
+function errs(){
+ const topics=all().map(t=>t.n);
+ return `<div class="card"><h2>Log an error</h2><input id="en" placeholder="Topic or question" style="margin-bottom:8px"><select id="et" style="margin-bottom:8px">${TYPES.map(t=>`<option>${t}</option>`).join("")}</select><textarea id="ex" rows="3" placeholder="What was the correct principle?" style="margin-bottom:8px"></textarea><button class="btn" id="ea">Add to error bank</button></div>
+ <div class="card"><h2>Error bank (${S.e.length})</h2>${S.e.length?S.e.map((e,i)=>`<div class="err"><button class="x" data-del="${i}" aria-label="Delete">×</button><b>${esc(e.n)}</b><div class="m">${e.t} · ${e.d}${e.by?" · "+esc(e.by):""}</div><div>${esc(e.x)}</div></div>`).join(""):'<div class="empty">Nothing logged yet. Add every mistake with the principle behind it.</div>'}</div>`}
+function render(){nav();$("#main").innerHTML={dash,days,scores,errs,adm}[S.tab]();const L=S.last;$("#last").textContent=L?"Last update by "+L.who+" at "+new Date(L.at).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"}):"Changes sync live for every admin."}
+document.addEventListener("click",e=>{
+ const b=e.target.closest("button");if(!b)return;
+ if(b.dataset.tab){S.tab=b.dataset.tab;render();window.scrollTo(0,0);if(S.tab=="adm")pull()}
+ else if(b.dataset.f!==undefined){S.filter=S.filter==b.dataset.f?"":b.dataset.f;render()}
+ else if(b.dataset.day){S.day=+b.dataset.day;render()}
+ else if(b.dataset.go){S.day=+b.dataset.go;S.tab="days";render();window.scrollTo(0,0)}
+ else if(b.dataset.t){S.t[b.dataset.t]=((S.t[b.dataset.t]||0)+1)%4;send({op:"set",f:"t|"+b.dataset.t,v:S.t[b.dataset.t],lbl:tn(b.dataset.t)+" → "+LAB[S.t[b.dataset.t]]});const y=scrollY;render();scrollTo(0,y)}
+ else if(b.dataset.del){const x=S.e.splice(+b.dataset.del,1)[0];send({op:"del",f:"e|"+x.id,lbl:"Deleted error: "+x.n});render()}
+ else if(b.id=="ea"){const n=$("#en").value.trim();if(!n){$("#en").focus();return}const id=Date.now().toString(36)+Math.random().toString(36).slice(2,6);const en={id,n,t:$("#et").value,x:$("#ex").value.trim(),d:new Date().toLocaleDateString(),by:S.who,at:Date.now()};S.e.unshift(en);send({op:"set",f:"e|"+id,v:en,lbl:"Logged error: "+n});render()}
+ else if(b.id=="th"){const r=document.documentElement,dk=getComputedStyle(r).getPropertyValue("--bg").trim()=="#17122b";r.dataset.theme=dk?"light":"dark"}
+ else if(b.id=="so"){try{localStorage.removeItem("rev14pw")}catch(_){}location.reload()}
+ else if(b.id=="rs"){if(confirm("Clear ALL shared progress, scores and errors for every admin?")){send({op:"reset"});Object.assign(S,{t:{},s:{},sc:{},e:[]});render()}}
+});
+document.addEventListener("change",e=>{
+ const t=e.target;
+ if(t.dataset.s!==undefined){const a=S.s[S.day]||(S.s[S.day]=[]);a[+t.dataset.s]=t.checked;send({op:"set",f:"s|"+S.day+"|"+t.dataset.s,v:t.checked,lbl:"Day "+S.day+" · "+SES[+t.dataset.s][0]+(t.checked?" done":" unticked")});const y=scrollY;render();scrollTo(0,y)}
+ else if(t.dataset.sc){const[d,j]=t.dataset.sc.split("-");const a=S.sc[d]||(S.sc[d]=["","",""]);const nv=t.value===""?"":Math.max(0,Math.min(100,+t.value));a[+j]=nv;send({op:"set",f:"sc|"+d+"|"+j,v:nv,lbl:"Day "+d+" "+["MCQ","Essay","Practical"][j]+" score "+(nv===""?"cleared":"= "+nv+"%")});t.classList.toggle("ok",t.value!==""&&+t.value>=80)}
+});
+$("#nm").value=S.who;{const n=todayN();if(n>=1&&n<=14)S.day=n}
+$("#lf").addEventListener("submit",async ev=>{ev.preventDefault();PW=$("#pw").value;S.who=$("#nm").value.trim()||"Admin";try{localStorage.setItem("rev14pw",PW);localStorage.setItem("rev14who",S.who)}catch(_){}
+ try{const d=await api("GET");apply(d.state);if(d.me)S.who=d.me;try{localStorage.setItem("rev14who",S.who)}catch(_){}$("#lg").hidden=true;render();send({op:"hello"})}catch(err){$("#lm").textContent=err.message=="auth"?"Wrong password.":"Server problem: "+err.message}});
+render();if(PW)pull();setInterval(()=>{if(PW)pull()},8000);
+</script></body></html>
